@@ -1,0 +1,693 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>PROFFLORD | Free Fire Gaming</title><meta name="description" content="PROFFLORD - Free Fire gameplay, tutorials, Shorts, gaming tips and tricks. Follow OG SAYAN for more gaming content."><style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+        radial-gradient(circle at top, #3b0000 0%, #090909 45%, #000 100%);
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* NAVIGATION */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 10px;
+    background: rgba(0, 0, 0, 0.94);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid red;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+}
+
+.logo {
+    display: inline-block;
+    color: red;
+    font-size: 22px;
+    font-weight: 900;
+    margin-right: 20px;
+    text-shadow: 0 0 12px red;
+}
+
+nav a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    margin: 5px 10px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: red;
+    transform: scale(1.08);
+}
+
+/* HERO */
+
+.hero {
+    min-height: 520px;
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    background: red;
+    filter: blur(120px);
+    opacity: 0.18;
+    border-radius: 50%;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero .welcome {
+    color: #aaa;
+    font-size: 18px;
+    letter-spacing: 5px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    margin: 15px 0;
+    font-size: clamp(50px, 12vw, 90px);
+    font-weight: 1000;
+    letter-spacing: 3px;
+    color: white;
+    text-shadow:
+        0 0 10px red,
+        0 0 25px red,
+        4px 4px 0 #550000;
+}
+
+.hero h2 {
+    color: red;
+    font-size: clamp(20px, 5vw, 30px);
+    margin-bottom: 20px;
+    text-shadow: 0 0 12px red;
+}
+
+.hero p {
+    max-width: 650px;
+    color: #ddd;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.hero-buttons {
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-block;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 24px;
+    margin: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-4px) scale(1.04);
+}
+
+.btn-red {
+    background: red;
+    color: white;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.45);
+}
+
+.btn-dark {
+    background: #181818;
+    color: white;
+    border: 1px solid #555;
+}
+
+/* SECTIONS */
+
+section {
+    width: 92%;
+    max-width: 950px;
+    margin: 30px auto;
+    padding: 35px 22px;
+    background: rgba(8, 8, 8, 0.92);
+    border: 1px solid #292929;
+    border-radius: 18px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.45);
+}
+
+section h2 {
+    color: red;
+    font-size: 30px;
+    margin-bottom: 18px;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+section p {
+    color: #ddd;
+    line-height: 1.7;
+}
+
+/* PROFILE */
+
+.profile-box {
+    padding: 20px;
+    border-radius: 15px;
+    background: linear-gradient(145deg, #151515, #080808);
+    border: 1px solid #333;
+}
+
+.profile-name {
+    font-size: 32px;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 8px;
+}
+
+.profile-name span {
+    color: red;
+}
+
+/* STATS */
+
+.games {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.game {
+    min-width: 150px;
+    padding: 18px;
+    border-radius: 12px;
+    background: #161616;
+    border: 1px solid #333;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.game:hover {
+    border-color: red;
+    transform: translateY(-5px);
+    box-shadow: 0 0 18px rgba(255, 0, 0, 0.25);
+}
+
+/* VIDEOS */
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 22px;
+    margin-top: 25px;
+}
+
+.video-card {
+    background: #111;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #333;
+    text-align: left;
+    transition: 0.3s;
+}
+
+.video-card:hover {
+    transform: translateY(-7px);
+    border-color: red;
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.25);
+}
+
+.video-card img {
+    width: 100%;
+    display: block;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.video-content {
+    padding: 18px;
+}
+
+.video-card h3 {
+    color: white;
+    margin-bottom: 10px;
+    font-size: 19px;
+}
+
+.video-card p {
+    color: #aaa;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.watch-btn {
+    display: inline-block;
+    background: red;
+    color: white;
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 7px;
+    font-weight: bold;
+}
+
+/* SOCIAL */
+
+.social-buttons {
+    margin-top: 20px;
+}
+
+.social-buttons a {
+    display: inline-block;
+    text-decoration: none;
+    margin: 5px;
+    padding: 13px 22px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.social-buttons a:hover {
+    transform: translateY(-4px);
+}
+
+.youtube {
+    background: red;
+    color: white;
+}
+
+.tiktok {
+    background: white;
+    color: black;
+}
+
+/* CONTACT */
+
+input,
+textarea {
+    width: 100%;
+    max-width: 500px;
+    padding: 14px;
+    margin: 7px 0;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #111;
+    color: white;
+    outline: none;
+}
+
+input:focus,
+textarea:focus {
+    border-color: red;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+}
+
+textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+form button {
+    border: none;
+    background: red;
+    color: white;
+    padding: 13px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* FOOTER */
+
+footer {
+    margin-top: 40px;
+    padding: 30px 15px;
+    background: #000;
+    border-top: 1px solid #222;
+    color: #777;
+}
+
+footer strong {
+    color: red;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    nav {
+        padding: 12px 5px;
+    }
+
+    .logo {
+        display: block;
+        margin: 0 0 8px;
+    }
+
+    nav a {
+        font-size: 13px;
+        margin: 4px 6px;
+    }
+
+    .hero {
+        min-height: 470px;
+        padding: 60px 15px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    section {
+        width: 94%;
+        padding: 28px 16px;
+    }
+
+    section h2 {
+        font-size: 25px;
+    }
+
+    .games {
+        gap: 10px;
+    }
+
+    .game {
+        min-width: 125px;
+        padding: 14px 8px;
+        font-size: 14px;
+    }
+
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style></head><body><!-- NAVIGATION --><nav>
+    <div class="logo">🔥 PROFFLORD</div><a href="#home">HOME</a>
+<a href="#about">ABOUT</a>
+<a href="#videos">VIDEOS</a>
+<a href="#contact">CONTACT</a>
+
+</nav><!-- HERO --><div class="hero" id="home"><div class="hero-content">
+
+    <div class="welcome">WELCOME TO</div>
+
+    <h1>PROFFLORD</h1>
+
+    <h2>FREE FIRE GAMING</h2>
+
+    <p>
+        Welcome to the official PROFFLORD gaming world.
+        Watch Free Fire gameplay, tutorials, Shorts,
+        tips, tricks and more.
+    </p>
+
+    <div class="hero-buttons">
+
+        <a class="btn btn-red" href="#videos">
+            🔥 WATCH VIDEOS
+        </a>
+
+        <a class="btn btn-dark"
+           href="https://www.youtube.com/@PROF-s8l"
+           target="_blank"
+           rel="noopener noreferrer">
+            ▶ VISIT YOUTUBE
+        </a>
+
+    </div>
+
+</div>
+
+</div><!-- ABOUT --><section id="about"><h2>👑 ABOUT PROFFLORD</h2>
+
+<div class="profile-box">
+
+    <div class="profile-name">
+        OG <span>SAYAN</span>
+    </div>
+
+    <p>
+        PROFFLORD is a gaming channel focused mainly on
+        Free Fire content, including gameplay, tutorials,
+        Shorts, tips and tricks.
+    </p>
+
+    <br>
+
+    <p>
+        Playstyle: <strong>RUSHER</strong> ⚡
+        <br>
+        Main Game: <strong>FREE FIRE</strong> 🔥
+    </p>
+
+</div>
+
+</section><!-- CONTENT --><section><h2>📊 PROFFLORD CONTENT</h2>
+
+<div class="games">
+
+    <div class="game">🔥 FREE FIRE</div>
+    <div class="game">🎮 GAMEPLAY</div>
+    <div class="game">🎯 TUTORIALS</div>
+    <div class="game">⚡ SHORTS</div>
+
+</div>
+
+</section><!-- VIDEOS --><section id="videos"><h2>🎮 LATEST GAMING VIDEOS</h2>
+
+<p>
+    Check out my Free Fire gaming content below.
+</p>
+
+<div class="video-grid">
+
+
+    <!-- VIDEO 1 -->
+
+    <div class="video-card">
+
+        <img
+            src="https://i.ytimg.com/vi/VBm5irSeNVo/maxresdefault.jpg"
+            alt="360 Movement Tutorial Free Fire"
+        >
+
+        <div class="video-content">
+
+            <h3>🔥 360° MOVEMENT TUTORIAL</h3>
+
+            <p>
+                Learn how to master 360° movement
+                in Free Fire with this tutorial.
+            </p>
+
+            <a class="watch-btn"
+               href="https://youtu.be/VBm5irSeNVo"
+               target="_blank"
+               rel="noopener noreferrer">
+                ▶ WATCH VIDEO
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- VIDEO 2 -->
+
+    <div class="video-card">
+
+        <img
+            src="https://i.ytimg.com/vi/_opI1e2f-HQ/maxresdefault.jpg"
+            alt="Best Character Skill Combinations Free Fire"
+        >
+
+        <div class="video-content">
+
+            <h3>🥇 BEST CHARACTER + SKILL COMBINATIONS</h3>
+
+            <p>
+                Discover powerful character and skill
+                combinations for Free Fire.
+            </p>
+
+            <a class="watch-btn"
+               href="https://youtu.be/_opI1e2f-HQ"
+               target="_blank"
+               rel="noopener noreferrer">
+                ▶ WATCH VIDEO
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- VIDEO 3 -->
+
+    <div class="video-card">
+
+        <img
+            src="https://i.ytimg.com/vi/a9IOsP-B_gM/maxresdefault.jpg"
+            alt="CS Noob Prank Free Fire"
+        >
+
+        <div class="video-content">
+
+            <h3>😂 CS NOOB PRANK</h3>
+
+            <p>
+                Watch this funny Free Fire CS Noob Prank
+                and enjoy the gameplay.
+            </p>
+
+            <a class="watch-btn"
+               href="https://youtu.be/a9IOsP-B_gM"
+               target="_blank"
+               rel="noopener noreferrer">
+                ▶ WATCH VIDEO
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section><!-- MY GAMES --><section><h2>🎮 MY GAMES</h2>
+
+<div class="games">
+
+    <div class="game">🔥 Free Fire</div>
+    <div class="game">⚔ Action Games</div>
+    <div class="game">📱 Mobile Games</div>
+
+</div>
+
+</section><!-- SOCIAL MEDIA --><section><h2>🌐 FOLLOW PROFFLORD</h2>
+
+<p>
+    Follow PROFFLORD for more gaming content!
+</p>
+
+<div class="social-buttons">
+
+    <a
+        class="youtube"
+        href="https://www.youtube.com/@PROF-s8l"
+        target="_blank"
+        rel="noopener noreferrer">
+        ▶ YouTube
+    </a>
+
+    <a
+        class="tiktok"
+        href="https://www.tiktok.com/@ogsaiyan3"
+        target="_blank"
+        rel="noopener noreferrer">
+        ♪ TikTok
+    </a>
+
+</div>
+
+</section><!-- CONTACT --><section id="contact"><h2>📩 CONTACT PROFFLORD</h2>
+
+<p>
+    Want to contact me? Send a message below.
+</p>
+
+<form onsubmit="sendMessage(event)">
+
+    <input
+        id="name"
+        type="text"
+        placeholder="Enter your name"
+        required
+    >
+
+    <textarea
+        id="message"
+        placeholder="Write your message"
+        required
+    ></textarea>
+
+    <button type="submit">
+        SEND MESSAGE
+    </button>
+
+</form>
+
+</section><!-- SUBSCRIBE --><section><h2>🔥 SUPPORT PROFFLORD</h2>
+
+<p>
+    Enjoying the content?
+    Subscribe and join the PROFFLORD community!
+</p>
+
+<br>
+
+<a
+    class="btn btn-red"
+    href="https://www.youtube.com/@PROF-s8l?sub_confirmation=1"
+    target="_blank"
+    rel="noopener noreferrer">
+    🔴 SUBSCRIBE ON YOUTUBE
+</a>
+
+</section><!-- FOOTER --><footer><p>
+    © 2026 <strong>PROFFLORD</strong>
+</p>
+
+<br>
+
+<p>
+    Free Fire • Gaming • Tutorials • Shorts
+</p>
+
+</footer><script>
+
+function sendMessage(event) {
+
+    event.preventDefault();
+
+    const name =
+        document.getElementById("name").value;
+
+    alert(
+        "Thanks " + name +
+        "! 🔥 Your message was received."
+    );
+
+}
+
+</script></body>
+</html>
